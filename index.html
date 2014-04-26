@@ -1,0 +1,100 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>2014 Golf Tournament</title>
+    <link rel='stylesheet' href='css/normalize.css'>
+    <link rel='stylesheet' href='css/foundation.css'>
+    <script src='js/modernizr.js'></script>
+  </head>
+  <body>
+    <div class="large-12 columns">
+      <form>
+        <fieldset>
+          <legend>2014 Golf Tournament</legend>
+          <div class="row">
+            <div class="large-8 columns">
+              <label>Registration * before 6/8/14 (each): $90, after 6/8/14 (each): $110</label>
+                <select id="registration">
+                  <option value="none"></option>
+                  <option value="single">Single Golfer</option>
+                  <option value="foursome">Foursome</option>
+                </select>
+              </label>
+            </div>
+            <div class="large-4 columns">
+              <label>Quantity</label>
+              <input type="text" name="quantity">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <label>Name #1</label>
+              <input type="text" name="name1">
+            </div>
+            <div class="large-3 columns foursome">
+              <label>Name #2</label>
+              <input type="text" name="name2">
+            </div>
+            <div class="large-3 columns foursome">
+              <label>Name #3</label>
+              <input type="text" name="name3">
+            </div>
+            <div class="large-3 columns foursome">
+              <label>Name #4</label>
+              <input type="text" name="name4">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Sponsorship</label>
+              <select id="sponsorship">
+                <option value="none"></option>
+                <option value="platinum_golf">Platinum — 2 dinner & 2 golf and signage on the course $1000</option>
+                <option value="gold_golf">Gold — 1 dinner & 1 golf and signage on the course $500</option>
+                <option value="silver_golf">Silver — 1 dinner and signage on the course $250</option>
+                <option value="bronze_golf">Bronze — 1 dinner and recognition in dinner brochure $100</option>
+                <option value="dinner_golf">Dinner only $25</option>
+              </select>
+            </div> 
+          </div>
+
+          <div class="row">
+            <div class="large-8 columns">
+              <label>Alumni Contribution ($25 min. for sponsor recognition)</label>
+                <select id="contribution">
+                  <option value="none"></option>
+                  <option value="alumni_contribution">Alumni Contribution</option>
+                  <option value="other_contribution">Other Contribution</option>
+                </select>
+              </label>
+            </div>
+            <div class="large-4 columns">
+              <label>Amount</label>
+              <input type="text" name="amount">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-4 columns">
+              <p id="total">Total</p>
+            </div>
+            <div class="large-3 columns">
+              <a href="#" id="submit" class="small button">Submit</a>
+            </div>
+          </div>
+          </fieldset>
+
+        </form>
+      </div>
+
+      <script src='js/modernizr.js'></script>
+      <script src='js/jquery.js'></script>
+      <script src='js/foundation.js'></script>
+      <script src='js/main.js'></script>
+    </body>
+  </html>
