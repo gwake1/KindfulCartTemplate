@@ -31,7 +31,9 @@
     var $names = $('input[name=names]');
     $names.each(function(index, name){
       name = $(name).val();
-      names.push(name);
+      if (name){
+        names.push(name);
+      }
     });
     names.join();
     return names;
@@ -145,7 +147,8 @@
 
     var names = getNames();
 
-    var url = "Registration";
+    var url = 'https://rcsf.trail-staging.us/widget?campaign_id=2834&schedule=0&success_url=http%3A//www.rochesterchristianschool.org/&cart[desc]=Golf'
+    url += "Registration";
     if ($registrationId !== ""){
       itemNumber ++;
       url += '&cart[items]['+itemNumber+'][amount]='+amount;
@@ -169,7 +172,7 @@
       url += '&cart[items]['+itemNumber+'][quantity]=1';
     }
     console.log(url);
-    return url;
+    window.location.href = url;
   }
 
 })();
