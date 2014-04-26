@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
 .main {
   font-family: 'Lato', 'sans-serif';
@@ -10,14 +10,24 @@ img {
 
 legend {
   color: #34495e;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Lato', 'sans-serif';
 }
 
 fieldset {
-  border: 7px solid #f1c40f;
+  border: 6px solid #f1c40f;
+  font-weight: bold;
   border-radius: 10px;
 }
 
-label, h5 {
+label, h4 {
   color: #34495e;
+  font-weight: bold;
+  font-family: 'Lato', 'sans-serif';
+}
+
+.button {
+  background-color: #34495e;
+  font-family: 'Lato', 'sans-serif';
 }

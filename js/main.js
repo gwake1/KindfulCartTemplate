@@ -171,7 +171,6 @@
       url += "&cart[items]["+items+"][product_id]="+$contributionId;
       url += "&cart[items]["+items+"][quantity]=1";
     }
-    alert(url);
     window.location.href = url;
   }
 
