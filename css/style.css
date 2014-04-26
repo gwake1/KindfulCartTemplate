@@ -9,15 +9,15 @@ img {
 }
 
 legend {
-  color: #001866;
+  color: #34495e;
   font-size: 30px;
 }
 
 fieldset {
-  border: 7px solid #f39c12;
+  border: 7px solid #f1c40f;
   border-radius: 10px;
 }
- 
-.button {
-  background-color: #001866;
+
+label, h5 {
+  color: #34495e;
 }

@@ -16,53 +16,53 @@
         <fieldset>
          <legend>
            <span><img src="images/logo.png"></span>
-           2014 Golf Tournament
+           2014 Golf Tournament &nbsp;
          </legend>
           <div class="row">
             <div class="large-8 columns">
               <label>Registration  ($90 ea. Before 6/8/14 & $110 ea. Thereafter)</label>
                 <select id="registration">
                   <option value="none"></option>
-                  <option value="single">Single Golfer</option>
+                  <option value="single_golfer">Single Golfer</option>
                   <option value="foursome">Foursome</option>
                 </select>
               </label>
             </div>
             <div class="large-4 columns">
               <label>Quantity</label>
-              <input type="text" name="quantity">
+              <input type="number" name="quantity" placeholder="1" min="0">
             </div>
           </div>
 
           <div class="row">
             <div class="large-3 columns">
               <label>Name #1</label>
-              <input type="text" name="names">
+              <input type="text" name="names", placeholder="Name">
             </div>
             <div class="large-3 columns foursome">
               <label>Name #2</label>
-              <input type="text" name="names">
+              <input type="text" name="names" placeholder="Name">
             </div>
             <div class="large-3 columns foursome">
               <label>Name #3</label>
-              <input type="text" name="names">
+              <input type="text" name="names" placeholder="Name">
             </div>
             <div class="large-3 columns foursome">
               <label>Name #4</label>
-              <input type="text" name="names">
+              <input type="text" name="names" placeholder="Name">
             </div>
           </div>
 
           <div class="row">
             <div class="large-12 columns">
-              <label>Sponsorship</label>
+              <label>Sponsorship Level</label>
               <select id="sponsorship">
                 <option value="none"></option>
-                <option value="platinum_golf">Platinum — 2 dinner & 2 golf and signage on the course $1000</option>
-                <option value="gold_golf">Gold — 1 dinner & 1 golf and signage on the course $500</option>
-                <option value="silver_golf">Silver — 1 dinner and signage on the course $250</option>
-                <option value="bronze_golf">Bronze — 1 dinner and recognition in dinner brochure $100</option>
-                <option value="dinner_golf">Dinner only $25</option>
+                <option value="platinum_golf">Platinum: 2 dinner, 2 golf and signage on the course - $1000</option>
+                <option value="gold_golf">Gold: 1 dinner, 1 golf and signage on the course - $500</option>
+                <option value="silver_golf">Silver: 1 dinner and signage on the course - $250</option>
+                <option value="bronze_golf">Bronze: 1 dinner and recognition in dinner brochure - $100</option>
+                <option value="dinner_golf">Dinner only - $25</option>
               </select>
             </div> 
           </div>
@@ -79,7 +79,7 @@
             </div>
             <div class="large-4 columns">
               <label>Amount</label>
-              <input type="text" name="amount">
+              <input type="number" name="amount" placeholder="25" min="0">
             </div>
           </div>
 
@@ -97,7 +97,7 @@
       </div>
 
       <script src='js/modernizr.js'></script>
-      <script src='js/jquery.js'></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
       <script src='js/foundation.js'></script>
       <script src='js/main.js'></script>
     </body>

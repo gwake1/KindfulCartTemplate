@@ -1,34 +1,34 @@
 (function(){
 
-  'use strict';
+  "use strict";
 
   $(document).ready(initialize);
 
   function initialize(){
     $(document).foundation();
     hideNames();
-    $('#registration').change(showNames);
-    $('#submit').click(buildUrl);
-    $('#submit').click(calculateTotal);
-    $('input, select').change(calculateTotal);
-  }
-
-  function showNames(){
-    var selected = $('#registration').find(":selected").val();
-    if (selected == 'foursome'){
-      $('.foursome').show();
-    }else{
-      $('.foursome').hide();
-    }
+    $("#registration").change(showNames);
+    $("#submit").click(buildUrl);
+    $("#submit").click(calculateTotal);
+    $("input, select").change(calculateTotal);
   }
 
   function hideNames(){
-    $('.foursome').hide();
+    $(".foursome").hide();
+  }
+
+  function showNames(){
+    var $selected = $("#registration").find(":selected").val();
+    if ($selected === "foursome"){
+      $(".foursome").show();
+    }else{
+      $(".foursome").hide();
+    }
   }
 
   function getNames(){
     var names = [];
-    var $names = $('input[name=names]');
+    var $names = $("input[name=names]");
     $names.each(function(index, name){
       name = $(name).val();
       if (name){
@@ -42,13 +42,13 @@
   function calculateRegistration(){
     var rate = getDay();
     var total = 0;
-    var $registrationType = $('#registration').find(":selected").val();
-    var $quantity = parseInt($('input[name=quantity]').val());
+    var $registrationType = $("#registration").find(":selected").val();
+    var $quantity = parseInt($("input[name=quantity]").val());
     var quantity = (isNaN($quantity)) ? 0 : $quantity;
 
-    if ($registrationType === 'single'){
+    if ($registrationType === "single_golfer"){
       total = rate * quantity;
-    }else if ($registrationType === 'foursome'){
+    }else if ($registrationType === "foursome"){
       total = (rate * quantity) * 4;
     }
     return total;
@@ -56,8 +56,8 @@
 
   function calculateSponsorship(){
     var sponsorshipAmount = 0;
-    var $sponsorshipValue = $('#sponsorship').find(":selected").val();
-    switch ($sponsorshipValue) {
+    var $sponsorshipLevel = $("#sponsorship").find(":selected").val();
+    switch ($sponsorshipLevel) {
       case "platinum_golf":
         sponsorshipAmount = 1000;
         break;
@@ -81,8 +81,8 @@
 
   function selectSponsorship(){
     var sponsorshipType = "";
-    var $sponsorshipValue = $('#sponsorship').find(":selected").val();
-    switch ($sponsorshipValue) {
+    var $sponsorshipLevel = $("#sponsorship").find(":selected").val();
+    switch ($sponsorshipLevel) {
       case "platinum_golf":
         sponsorshipType = "Platinum Plan";
         break;
@@ -105,17 +105,17 @@
     }
 
   function calculateContribution(){
-    var $amount = parseInt($('input[name=amount]').val());
+    var $amount = parseInt($("input[name=amount]").val());
     var amount = (isNaN($amount)) ? 0 : $amount;
     return amount;
   }
 
   function calculateTotal(){
-    var $registrationTotal = calculateRegistration();
-    var $sponsorshipTotal = calculateSponsorship();
-    var $contributionTotal = calculateContribution();
-    var total = $registrationTotal + $sponsorshipTotal + $contributionTotal;
-    $('#total').text(total);
+    var registrationTotal = calculateRegistration();
+    var sponsorshipTotal = calculateSponsorship();
+    var contributionTotal = calculateContribution();
+    var total = registrationTotal + sponsorshipTotal + contributionTotal;
+    $("#total").text(total);
   }
 
   function getDay(){
@@ -131,47 +131,47 @@
   }
 
   function buildUrl(){
-    var itemNumber = 0;
-    var amount = calculateRegistration();
-    var $registrationType = $('#registration').find(":selected").text();
-    var $registrationId = $('#registration').find(":selected").val();
-    var $quantity = parseInt($('input[name=quantity]').val());
+    var items = 0;
+    var registrationAmount = calculateRegistration();
+    var $registrationType = $("#registration").find(":selected").text();
+    var $registrationId = $("#registration").find(":selected").val();
+    var $quantity = parseInt($("input[name=quantity]").val());
 
-    var $sponsorshipAmount = calculateSponsorship();
-    var $sponsorshipType = selectSponsorship();
-    var $sponsorshipId = $('#sponsorship').find(":selected").val();
+    var sponsorshipAmount = calculateSponsorship();
+    var sponsorshipType = selectSponsorship();
+    var $sponsorshipId = $("#sponsorship").find(":selected").val();
 
     var $contributionAmount = calculateContribution();
-    var $contributionType = $('#contribution').find(":selected").text();
-    var $contributionId = $('#contribution').find(":selected").val();
+    var $contributionType = $("#contribution").find(":selected").text();
+    var $contributionId = $("#contribution").find(":selected").val();
 
     var names = getNames();
 
-    var url = 'https://rcsf.trail-staging.us/widget?campaign_id=2834&schedule=0&success_url=http%3A//www.rochesterchristianschool.org/&cart[desc]=Golf'
+    var url = "https://rcsf.trail-staging.us/widget?campaign_id=2834&schedule=0&success_url=http%3A//www.rochesterchristianschool.org/&cart[desc]=Golf"
     url += "Registration";
-    if ($registrationId !== ""){
-      itemNumber ++;
-      url += '&cart[items]['+itemNumber+'][amount]='+amount;
-      url += '&cart[items]['+itemNumber+'][desc]='+$registrationType;
-      url += '&cart[items]['+itemNumber+'][product_id]='+$registrationId;
-      url += '&cart[items]['+itemNumber+'][quantity]='+$quantity;
-      url += '&cart[items]['+itemNumber+'][names]='+names;
+    if ($registrationType !== ""){
+      items ++;
+      url += "&cart[items]["+items+"][amount]="+registrationAmount;
+      url += "&cart[items]["+items+"][desc]="+$registrationType;
+      url += "&cart[items]["+items+"][product_id]="+$registrationId;
+      url += "&cart[items]["+items+"][quantity]="+$quantity;
+      url += "&cart[items]["+items+"][names]="+names;
     }
-    if ($sponsorshipType !== ""){
-      itemNumber ++
-      url += '&cart[items]['+itemNumber+'][amount]='+$sponsorshipAmount;
-      url += '&cart[items]['+itemNumber+'][desc]='+$sponsorshipType;
-      url += '&cart[items]['+itemNumber+'][product_id]='+$sponsorshipId;
-      url += '&cart[items]['+itemNumber+'][quantity]=1';
+    if (sponsorshipType !== ""){
+      items ++
+      url += "&cart[items]["+items+"][amount]="+sponsorshipAmount;
+      url += "&cart[items]["+items+"][desc]="+sponsorshipType;
+      url += "&cart[items]["+items+"][product_id]="+$sponsorshipId;
+      url += "&cart[items]["+items+"][quantity]=1";
     }
     if ($contributionType !== ""){
-      itemNumber ++
-      url += '&cart[items]['+itemNumber+'][amount]='+$contributionAmount;
-      url += '&cart[items]['+itemNumber+'][desc]='+$contributionType;
-      url += '&cart[items]['+itemNumber+'][product_id]='+$contributionId;
-      url += '&cart[items]['+itemNumber+'][quantity]=1';
+      items ++
+      url += "&cart[items]["+items+"][amount]="+$contributionAmount;
+      url += "&cart[items]["+items+"][desc]="+$contributionType;
+      url += "&cart[items]["+items+"][product_id]="+$contributionId;
+      url += "&cart[items]["+items+"][quantity]=1";
     }
-    console.log(url);
+    alert(url);
     window.location.href = url;
   }
 
