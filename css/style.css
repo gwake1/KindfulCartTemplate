@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+.main {
+  font-family: 'Lato', 'sans-serif';
+}
+
+img {
+  height: 100px;
+}
+
+legend {
+  color: #001866;
+  font-size: 30px;
+}
+
+fieldset {
+  border: 4px solid #f39c12;
+}
+ 
+.button {
+  background-color: #001866;
+}

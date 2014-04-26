@@ -11,15 +11,12 @@
     $('#submit').click(buildUrl);
     $('#submit').click(calculateTotal);
     $('input, select').change(calculateTotal);
-    //$('#submit').click(calculateRegistration);
-    //$('#submit').click(calculateSponsorship);
-    //$('#submit').click(calculateContribution);
   }
 
   function showNames(){
     var selected = $('#registration').find(":selected").val();
     if (selected == 'foursome'){
-      $('.foursome').show(); 
+      $('.foursome').show();
     }else{
       $('.foursome').hide();
     }
@@ -27,6 +24,17 @@
 
   function hideNames(){
     $('.foursome').hide();
+  }
+
+  function getNames(){
+    var names = [];
+    var $names = $('input[name=names]');
+    $names.each(function(index, name){
+      name = $(name).val();
+      names.push(name);
+    });
+    names.join();
+    return names;
   }
 
   function calculateRegistration(){
@@ -120,12 +128,11 @@
     return registrationRate;
   }
 
- 
   function buildUrl(){
     var itemNumber = 0;
     var amount = calculateRegistration();
     var $registrationType = $('#registration').find(":selected").text();
-    var $registrationId = $('#registration').find(":selected").val(); 
+    var $registrationId = $('#registration').find(":selected").val();
     var $quantity = parseInt($('input[name=quantity]').val());
 
     var $sponsorshipAmount = calculateSponsorship();
@@ -135,7 +142,9 @@
     var $contributionAmount = calculateContribution();
     var $contributionType = $('#contribution').find(":selected").text();
     var $contributionId = $('#contribution').find(":selected").val();
-    
+
+    var names = getNames();
+
     var url = "Registration";
     if ($registrationId !== ""){
       itemNumber ++;
@@ -143,6 +152,7 @@
       url += '&cart[items]['+itemNumber+'][desc]='+$registrationType;
       url += '&cart[items]['+itemNumber+'][product_id]='+$registrationId;
       url += '&cart[items]['+itemNumber+'][quantity]='+$quantity;
+      url += '&cart[items]['+itemNumber+'][names]='+names;
     }
     if ($sponsorshipType !== ""){
       itemNumber ++
@@ -161,15 +171,5 @@
     console.log(url);
     return url;
   }
-//Registration
-//&cart[items][1][amount]=90
-//&cart[items][1][desc]=Single Golfer
-//&cart[items][1][product_id]=single_golfer
-//&cart[items][1][quantity]=2
-
-//&cart[items][2][amount]=1000
-//&cart[items][2][desc]=Platinum Plan
-//&cart[items][2][product_id]=platinum_golf
-//&cart[items][2][quantity]=1
 
 })();

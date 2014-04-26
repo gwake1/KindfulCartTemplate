@@ -7,16 +7,20 @@
     <title>2014 Golf Tournament</title>
     <link rel='stylesheet' href='css/normalize.css'>
     <link rel='stylesheet' href='css/foundation.css'>
+    <link rel='stylesheet' href='css/style.css'>
     <script src='js/modernizr.js'></script>
   </head>
   <body>
-    <div class="large-12 columns">
+    <div class="large-12 columns main">
       <form>
         <fieldset>
-          <legend>2014 Golf Tournament</legend>
+         <legend>
+           <span><img src="images/logo.png"></span>
+           2014 Golf Tournament
+         </legend>
           <div class="row">
             <div class="large-8 columns">
-              <label>Registration * before 6/8/14 (each): $90, after 6/8/14 (each): $110</label>
+              <label>Registration  ($90 ea. Before 6/8/14 & $110 ea. Thereafter)</label>
                 <select id="registration">
                   <option value="none"></option>
                   <option value="single">Single Golfer</option>
@@ -33,19 +37,19 @@
           <div class="row">
             <div class="large-3 columns">
               <label>Name #1</label>
-              <input type="text" name="name1">
+              <input type="text" name="names">
             </div>
             <div class="large-3 columns foursome">
               <label>Name #2</label>
-              <input type="text" name="name2">
+              <input type="text" name="names">
             </div>
             <div class="large-3 columns foursome">
               <label>Name #3</label>
-              <input type="text" name="name3">
+              <input type="text" name="names">
             </div>
             <div class="large-3 columns foursome">
               <label>Name #4</label>
-              <input type="text" name="name4">
+              <input type="text" name="names">
             </div>
           </div>
 
@@ -80,11 +84,11 @@
           </div>
 
           <div class="row">
-            <div class="large-4 columns">
-              <p id="total">Total</p>
+            <div class="large-10 columns">
+              <h5>Total: $ <span id="total"></span></h5>
             </div>
-            <div class="large-3 columns">
-              <a href="#" id="submit" class="small button">Submit</a>
+            <div class="large-2 columns">
+              <a href="#" id="submit" class="medium radius button">Submit</a>
             </div>
           </div>
           </fieldset>
