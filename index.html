@@ -54,7 +54,7 @@
           </div>
 
           <div class="row">
-            <div class="large-12 columns">
+            <div class="large-8 columns">
               <label>Sponsorship Level</label>
               <select id="sponsorship">
                 <option value="none"></option>
@@ -62,24 +62,36 @@
                 <option value="gold_golf">Gold: 1 dinner, 1 golf and signage on the course - $500</option>
                 <option value="silver_golf">Silver: 1 dinner and signage on the course - $250</option>
                 <option value="bronze_golf">Bronze: 1 dinner and recognition in dinner brochure - $100</option>
-                <option value="dinner_golf">Dinner only - $25</option>
               </select>
-            </div> 
+            </div>
+            <div class="large-2 columns">
+              <label>Dinner</label>
+              <input id="dinner" type="checkbox"><label value="dinner_golf">$25</label>
+            </div>
+            <div class="large-2 columns">
+              <label>Quantity</label>
+              <input type="number" name="dinner_quantity" placeholder="1" min="0">
+            </div>
           </div>
 
           <div class="row">
-            <div class="large-8 columns">
-              <label>Alumni Contribution ($25 min. for sponsor recognition)</label>
-                <select id="contribution">
-                  <option value="none"></option>
-                  <option value="alumni_contribution">Alumni Contribution</option>
-                  <option value="other_contribution">Other Contribution</option>
-                </select>
+            <div class="large-4 columns">
+              <label>Alumni Contribution</label>
+                <input id="alumni-contribution" type="checkbox"><label value="alumni_contribution">*$25 min. for sponsor recognition</label>
               </label>
             </div>
-            <div class="large-4 columns">
+            <div class="large-2 columns">
               <label>Amount</label>
-              <input type="number" name="amount" placeholder="25" min="0">
+              <input type="number" name="alumni_amount" placeholder="25" min="0">
+            </div>
+            <div class="large-4 columns">
+              <label>Other Contribution</label>
+                <input id="other-contribution" type="checkbox"><label value="other_contribution">*$25 min. for sponsor recognition</label>
+              </label>
+            </div>
+            <div class="large-2 columns">
+              <label>Amount</label>
+              <input type="number" name="other_amount" placeholder="25" min="0">
             </div>
           </div>
 
