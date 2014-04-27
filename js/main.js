@@ -185,7 +185,9 @@
       url += "&cart[items]["+items+"][desc]="+$registrationType;
       url += "&cart[items]["+items+"][product_id]="+$registrationId;
       url += "&cart[items]["+items+"][quantity]="+$quantity;
-      url += "&cart[items]["+items+"][names]="+names;
+      if (names.length !== 0) {
+        url += "&cart[items]["+items+"][names]="+names;
+      }
     }
     if (sponsorshipType !== ""){
       items ++
