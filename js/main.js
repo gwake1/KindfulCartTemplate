@@ -11,6 +11,7 @@
     $("#submit").click(buildUrl);
     $("#submit").click(calculateTotal);
     $("input, select").change(calculateTotal);
+    $("#registration").change(setDefaultRegistrationValue);
   }
 
   function hideNames(){
@@ -37,6 +38,11 @@
     });
     names.join();
     return names;
+  }
+
+  function setDefaultRegistrationValue(){
+    $("input[name=quantity]").val(1);
+    calculateTotal();
   }
 
   function calculateRegistration(){
