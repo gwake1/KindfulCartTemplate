@@ -113,29 +113,23 @@
 
   function calculateDinner(){
     var dinnerAmount = 0;
-    //if ($("#dinner").is(":checked")){
-      var $amount = parseInt($("input[name=dinner_quantity]").val());
-      $amount *= 25;
-      dinnerAmount = (isNaN($amount)) ? 0 : $amount;
-    //}
+    var $amount = parseInt($("input[name=dinner_quantity]").val());
+    $amount *= 25;
+    dinnerAmount = (isNaN($amount)) ? 0 : $amount;
     return dinnerAmount;
   }
 
   function calculateAlumniContribution(){
     var alumniContribution = 0;
-    //if ($("#alumni-contribution").is(":checked")){
-      var $amount = parseInt($("input[name=alumni_amount]").val());
-      alumniContribution = (isNaN($amount)) ? 0 : $amount;
-    //}
+    var $amount = parseInt($("input[name=alumni_amount]").val());
+    alumniContribution = (isNaN($amount)) ? 0 : $amount;
     return alumniContribution;
   }
 
   function calculateOtherContribution(){
     var otherContribution = 0;
-    //if ($("#other-contribution").is(":checked")){
-      var $amount = parseInt($("input[name=other_amount]").val());
-      otherContribution = (isNaN($amount)) ? 0 : $amount;
-    //}
+    var $amount = parseInt($("input[name=other_amount]").val());
+    otherContribution = (isNaN($amount)) ? 0 : $amount;
     return otherContribution;
   }
 
