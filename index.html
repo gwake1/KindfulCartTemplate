@@ -34,7 +34,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row form-row">
             <div class="large-3 columns">
               <label>Player 1</label>
               <input type="text" name="names", placeholder="Player Name">
@@ -53,7 +53,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row form-row">
             <div class="large-8 columns">
               <label>Sponsorship Level</label>
               <select id="sponsorship">
@@ -64,34 +64,25 @@
                 <option value="bronze_golf">Bronze: 1 dinner and recognition in dinner brochure - $100</option>
               </select>
             </div>
-            <div class="large-2 columns">
-              <label>Dinner</label>
-              <input id="dinner" type="checkbox"><label value="dinner_golf">$25</label>
-            </div>
-            <div class="large-2 columns">
-              <label>Quantity</label>
+          </div>
+
+          <div class="row form-row">
+            <div class="large-4 columns">
+              <label>Dinner Quantity ($25 ea.)</label>
               <input type="number" name="dinner_quantity" placeholder="1" min="0">
             </div>
           </div>
 
           <div class="row">
             <div class="large-4 columns">
-              <label>Alumni Contribution</label>
-                <input id="alumni-contribution" type="checkbox"><label value="alumni_contribution">*$25 min. for sponsor recognition</label>
-              </label>
+              <label>Alumni Contribution Amount</label>
+                <input type="number" name="alumni_amount" placeholder="$ 25" min="0">
             </div>
-            <div class="large-2 columns">
-              <label>Amount</label>
-              <input type="number" name="alumni_amount" placeholder="25" min="0">
-            </div>
+          </div>
+          <div class="row form-row">
             <div class="large-4 columns">
-              <label>Other Contribution</label>
-                <input id="other-contribution" type="checkbox"><label value="other_contribution">*$25 min. for sponsor recognition</label>
-              </label>
-            </div>
-            <div class="large-2 columns">
-              <label>Amount</label>
-              <input type="number" name="other_amount" placeholder="25" min="0">
+              <label>Other Contribution Amount</label>
+                <input type="number" name="other_amount" placeholder="$ 25" min="0">
             </div>
           </div>
 
@@ -100,7 +91,7 @@
               <h4>Total: $ <span id="total"></span></h4>
             </div>
             <div class="large-2 columns">
-              <a href="#" id="submit" class="medium radius button">Submit</a>
+              <a href="#" id="submit" class="large radius button">Submit</a>
             </div>
           </div>
           </fieldset>

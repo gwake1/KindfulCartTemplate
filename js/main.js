@@ -113,29 +113,29 @@
 
   function calculateDinner(){
     var dinnerAmount = 0;
-    if ($("#dinner").is(":checked")){
+    //if ($("#dinner").is(":checked")){
       var $amount = parseInt($("input[name=dinner_quantity]").val());
       $amount *= 25;
       dinnerAmount = (isNaN($amount)) ? 0 : $amount;
-    }
+    //}
     return dinnerAmount;
   }
 
   function calculateAlumniContribution(){
     var alumniContribution = 0;
-    if ($("#alumni-contribution").is(":checked")){
+    //if ($("#alumni-contribution").is(":checked")){
       var $amount = parseInt($("input[name=alumni_amount]").val());
       alumniContribution = (isNaN($amount)) ? 0 : $amount;
-    }
+    //}
     return alumniContribution;
   }
 
   function calculateOtherContribution(){
     var otherContribution = 0;
-    if ($("#other-contribution").is(":checked")){
+    //if ($("#other-contribution").is(":checked")){
       var $amount = parseInt($("input[name=other_amount]").val());
       otherContribution = (isNaN($amount)) ? 0 : $amount;
-    }
+    //}
     return otherContribution;
   }
 
@@ -179,14 +179,14 @@
 
     var url = "https://rcsf.trail-staging.us/widget?campaign_id=2834&schedule=0&success_url=http%3A//www.rochesterchristianschool.org/&cart[desc]=Golf"
     url += "Registration";
-    if ($registrationType !== ""){
+    if ($registrationType !== "" && $quantity > 0){
       items ++;
       url += "&cart[items]["+items+"][amount]="+registrationAmount;
       url += "&cart[items]["+items+"][desc]="+$registrationType;
       url += "&cart[items]["+items+"][product_id]="+$registrationId;
       url += "&cart[items]["+items+"][quantity]="+$quantity;
       if (names.length !== 0) {
-        url += "&cart[items]["+items+"][names]="+names;
+        url += "&cart[items]["+items+"][notes]="+names;
       }
     }
     if (sponsorshipType !== ""){
@@ -196,29 +196,30 @@
       url += "&cart[items]["+items+"][product_id]="+$sponsorshipId;
       url += "&cart[items]["+items+"][quantity]=1";
     }
-    if ($("#dinner").is(":checked")){
+    if ($dinnerQuantity > 0){
       items ++
       url += "&cart[items]["+items+"][amount]=25";
       url += "&cart[items]["+items+"][desc]=Dinner";
       url += "&cart[items]["+items+"][product_id]=dinner_golf";
       url += "&cart[items]["+items+"][quantity]="+$dinnerQuantity;
     }
-    if ($("#alumni-contribution").is(":checked")){
+    if (alumniContributionAmount > 0){
       items ++
       url += "&cart[items]["+items+"][amount]="+alumniContributionAmount;
       url += "&cart[items]["+items+"][desc]=Alumni Contribution";
       url += "&cart[items]["+items+"][product_id]=alumni_contribution";
       url += "&cart[items]["+items+"][quantity]=1";
     }
-    if ($("#other-contribution").is(":checked")){
+    if (otherContributionAmount > 0){
       items ++
       url += "&cart[items]["+items+"][amount]="+otherContributionAmount;
       url += "&cart[items]["+items+"][desc]=Other Contribution";
       url += "&cart[items]["+items+"][product_id]=other_contribution";
       url += "&cart[items]["+items+"][quantity]=1";
     }
-    alert(url);
-    window.location.href = url;
+    if (items > 0){
+      window.location.href = url;
+    }
   }
 
 })();
