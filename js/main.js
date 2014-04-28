@@ -218,7 +218,6 @@
       url += "&cart[items]["+items+"][quantity]=1";
     }
     if (items > 0){
-      alert(url);
       window.location.href = url;
     }
   }
