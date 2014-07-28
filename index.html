@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>2014 Golf Tournament</title>
+    <title>2014 Mad Hatter, September 5, 2014, Hutton Hotel</title>
     <link rel='stylesheet' href='css/normalize.css'>
     <link rel='stylesheet' href='css/foundation.css'>
     <link rel='stylesheet' href='css/style.css'>
@@ -16,40 +16,29 @@
         <fieldset>
          <legend>
            <span><img src="images/logo.png"></span>
-           2014 Golf Tournament &nbsp;
+           <span class="event-title">2014 Mad Hatter, September 5, 2014, Hutton Hotel</span> &nbsp;
          </legend>
-          <div class="row">
+         <div class="event-title-mobile">
+          <h3>2014 Mad Hatter</h3>
+          <h4>September 5, 2014, Hutton Hotel</h4>
+         </div>
+          <div class="row form-row">
             <div class="large-8 columns">
-              <label>Registration  ($90 ea. Before 6/8/14 & $110 ea. Thereafter)</label>
+              <label>Choose Your Number of Tickets ($175, up to 10 tickets)</label>
                 <select id="registration">
                   <option value="none"></option>
-                  <option value="single_golfer">Single Golfer</option>
-                  <option value="foursome">Foursome</option>
+                  <option value="1" data-product-id="1">1 Ticket</option>
+                  <option value="2" data-product-id="1">2 Tickets</option>
+                  <option value="3" data-product-id="1">3 Tickets</option>
+                  <option value="4" data-product-id="1">4 Tickets</option>
+                  <option value="5" data-product-id="1">5 Tickets</option>
+                  <option value="6" data-product-id="1">6 Tickets</option>
+                  <option value="7" data-product-id="1">7 Tickets</option>
+                  <option value="8" data-product-id="1">8 Tickets</option>
+                  <option value="9" data-product-id="1">9 Tickets</option>
+                  <option value="10" data-product-id="1">10 Tickets</option>
                 </select>
               </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Quantity</label>
-              <input type="number" name="quantity" placeholder="1" min="0">
-            </div>
-          </div>
-
-          <div class="row form-row">
-            <div class="large-3 columns">
-              <label>Player 1</label>
-              <input type="text" name="names", placeholder="Player Name">
-            </div>
-            <div class="large-3 columns foursome">
-              <label>Player 2</label>
-              <input type="text" name="names" placeholder="Player Name">
-            </div>
-            <div class="large-3 columns foursome">
-              <label>Player 3</label>
-              <input type="text" name="names" placeholder="Player Name">
-            </div>
-            <div class="large-3 columns foursome">
-              <label>Player 4</label>
-              <input type="text" name="names" placeholder="Player Name">
             </div>
           </div>
 
@@ -58,31 +47,17 @@
               <label>Sponsorship Level</label>
               <select id="sponsorship">
                 <option value="none"></option>
-                <option value="platinum_golf">Platinum: 2 dinner, 2 golf and signage on the course - $1000</option>
-                <option value="gold_golf">Gold: 1 dinner, 1 golf and signage on the course - $500</option>
-                <option value="silver_golf">Silver: 1 dinner and signage on the course - $250</option>
-                <option value="bronze_golf">Bronze: 1 dinner and recognition in dinner brochure - $100</option>
+                <option value="platinum_level">Platinum - $1000: Includes 2 tickets to Mad Hatter on September 5 and 2 tickets to Patrons' Party on September 2</option>
+                <option value="gold_level">Gold - $500: Includes 1 ticket to Mad Hatter on September 5 and 2 tickets to Patrons' Party on September 2</option>
+                <option value="silver_level">Silver - $250: Includes 2 tickets to Patrons' Party</option>
               </select>
             </div>
           </div>
 
           <div class="row form-row">
             <div class="large-4 columns">
-              <label>Its $25 for each extra dinner</label>
-              <input type="number" name="dinner_quantity" placeholder="1" min="0">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="large-4 columns">
-              <label>Alumni Contribution Amount</label>
-                <input type="number" name="alumni_amount" placeholder="$ 25" min="0">
-            </div>
-          </div>
-          <div class="row form-row">
-            <div class="large-4 columns">
-              <label>Other Contribution Amount</label>
-                <input type="number" name="other_amount" placeholder="$ 25" min="0">
+              <label>Make an Additional Donation</label>
+                <span class="dollar">$&nbsp;</span><input type="number" id="other_amount" name="other_amount" placeholder="25" min="0">
             </div>
           </div>
 
